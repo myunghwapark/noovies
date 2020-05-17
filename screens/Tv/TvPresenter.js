@@ -13,9 +13,19 @@ const Container = styled.View`
 `;
 
 
-export default ({loading, popular, topRated, today, thisWeek}) => (
-    <ScrollContainer loading={loading}>
+export default ({ refreshFn, loading, popular, topRated, today, thisWeek }) => (
+    <ScrollContainer refreshFn={refreshFn} loading={loading}>
         <Container>
+            <HorizontalSlider title="Popular Shows">
+                {popular.map(show => 
+                    <Vertical 
+                        id={show.id}
+                        key={show.id} 
+                        poster={show.poster_path} 
+                        title={show.name} 
+                        votes={show.vote_average} />
+                    )}
+            </HorizontalSlider>
             <MainSlider>
                 {thisWeek.map(show =>(
                     <Slide 
@@ -29,16 +39,6 @@ export default ({loading, popular, topRated, today, thisWeek}) => (
                     />
                 ))}
             </MainSlider>
-            <HorizontalSlider title="Popular Shows">
-                {popular.map(show => 
-                    <Vertical 
-                        id={show.id}
-                        key={show.id} 
-                        poster={show.poster_path} 
-                        title={show.name} 
-                        votes={show.vote_average} />
-                    )}
-            </HorizontalSlider>
             <HorizontalSlider title="Top Rated Shows">
                 {topRated.map(show => 
                     <Vertical 

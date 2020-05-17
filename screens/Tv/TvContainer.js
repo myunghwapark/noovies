@@ -37,6 +37,6 @@ export default () => {
     getData()
   }, [])
   return (
-    <TvPresenter {...shows} />
+    <TvPresenter refreshFn={getData} {...shows} />
   );
 }

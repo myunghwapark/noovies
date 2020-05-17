@@ -84,7 +84,7 @@ const Slide = ({ id, title, backgroundImage, votes, overview, poster }) => (
 Slide.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  backgroundImage: PropTypes.string.isRequired,
+  backgroundImage: PropTypes.string,
   votes: PropTypes.number.isRequired,
   overview: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired

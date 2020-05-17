@@ -31,8 +31,10 @@ export default () => {
   };
   useEffect(() => {
     getData()
-  }, [])
+  }, []);
+
+  
   return (
-    <MoviesPresenter {...movies} />
+    <MoviesPresenter refreshFn={getData} {...movies} />
   );
 }

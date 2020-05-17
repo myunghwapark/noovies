@@ -20,7 +20,7 @@ const cacheFonts = fonts => fonts.map(font => Font.loadAsync(font));
 export default function App() {
   const [isReady, setIsReady] = useState(false);
   const loadAssets = () => {
-    const images = cacheImages(["https://images.unsplash.com/photo-1589294755688-39171ec5a6b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", require("./assets/splash.png")]);
+    const images = cacheImages(["https://images.unsplash.com/photo-1497514440240-3b870f7341f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", require("./assets/splash.png")]);
 
     const fonts = cacheFonts([Ionicons.font]);
 
