@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Poster from "./Poster";
 import { trimText, formatDate } from "../utils";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Container = styled.View`
   padding: 0px 20px;
@@ -35,8 +36,20 @@ const Overview = styled.Text`
 `;
 
 
-const Horizontal = ({ id, title, poster, overview, releaseDate }) => (
-    <TouchableOpacity>
+const Horizontal = ({ isTv = false, id, title, poster, overview, releaseDate }) => {
+  const navigation = useNavigation();
+  const goToDetail = () => {
+    navigation.navigate("Detail", {
+      isTv,
+      id,
+      title,
+      poster,
+      overview,
+      releaseDate
+    });
+  }
+  return (
+    <TouchableOpacity onPress={goToDetail}>
         <Container>
             <Poster url={poster} />
             <Data>
@@ -47,13 +60,14 @@ const Horizontal = ({ id, title, poster, overview, releaseDate }) => (
         </Container>
     </TouchableOpacity>
 );
+}
 
 Horizontal.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     releaseDate: PropTypes.string,
     overview: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired
+    poster: PropTypes.string
 }
 
 export default Horizontal;

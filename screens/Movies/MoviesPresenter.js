@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Dimensions, ScrollView } from "react-native";
-import Slide from "../../components/Movies/Slide";
+import Slide from "../../components/Slide";
 import Title from "../../components/Title";
 import Vertical from "../../components/Vertical";
 import Horizontal from "../../components/Horizontal";
@@ -12,9 +12,7 @@ import MainSlider from "../../components/MainSlider";
 
 
 
-
 const Container = styled.View``;
-
 
 
 export default ({ refreshFn, loading, nowPlaying, popular, upcoming }) => (

@@ -6,7 +6,7 @@ import styled from "styled-components/native";
 import List from "../../components/List";
 import Horizontal from "../../components/Horizontal";
 import MainSlider from "../../components/MainSlider";
-import Slide from "../../components/Movies/Slide";
+import Slide from "../../components/Slide";
 
 const Container = styled.View`
     margin-top: 30px;
@@ -19,6 +19,7 @@ export default ({ refreshFn, loading, popular, topRated, today, thisWeek }) => (
             <HorizontalSlider title="Popular Shows">
                 {popular.map(show => 
                     <Vertical 
+                        isTv={true}
                         id={show.id}
                         key={show.id} 
                         poster={show.poster_path} 
@@ -29,6 +30,7 @@ export default ({ refreshFn, loading, popular, topRated, today, thisWeek }) => (
             <MainSlider>
                 {thisWeek.map(show =>(
                     <Slide 
+                        isTv={true}
                         key={show.id}
                         id={show.id}
                         title={show.name}
@@ -42,6 +44,7 @@ export default ({ refreshFn, loading, popular, topRated, today, thisWeek }) => (
             <HorizontalSlider title="Top Rated Shows">
                 {topRated.map(show => 
                     <Vertical 
+                        isTv={true}
                         id={show.id}
                         key={show.id} 
                         poster={show.poster_path} 
@@ -52,6 +55,7 @@ export default ({ refreshFn, loading, popular, topRated, today, thisWeek }) => (
             <List title="Airing Today">
                 {today.map(show => 
                     <Horizontal 
+                        isTv={true}
                         key={show.id} 
                         id={show.id} 
                         title={show.name} 
