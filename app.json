@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "noovies",
+    "name": "Noovies",
     "slug": "noovies",
     "privacy": "public",
     "sdkVersion": "37.0.0",
@@ -10,12 +10,14 @@
       "web"
     ],
     "version": "1.0.0",
+    "primaryColor": "#000000",
+    "backgroundColor": "#000000",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +26,21 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.alicenz.noovies",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.alicenz.noovies",
+      "versionCode": 1
+    },
+    "androidStatusBar": {
+      "barStyle": "dark-content", 
+      "backgroundColor": "#00000000"
+    },
+    "androidNavigationBar": {
+      "barStyle": "dark-content", 
+      "backgroundColor": "#00000000"
     }
   }
 }
